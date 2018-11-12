@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MY WEB PAGE</title>
+	<style>
+	body{
+            margin: auto;
+            margin-top: 10%;
+	background-color:greenyellow;
+	}
+        .mdiv{
+            background-color:#660000 ;
+            height: 350px;
+            width: 800px;
+            margin: auto;
+            border-radius: 8px;
+        }
+        .div1{
+	background-color:white;
+        float:left;
+	width:400px;
+	height:350px;
+	border-radius:5px 0px 0px 5px;
+        box-shadow: 10px 10px 10px black;
+	}
+	.div2{
+	background-color:#d9d9d9;
+	float:right;
+	width:400px;
+	height:350px;
+	border-radius:0px 5px 5px 0px;
+	box-shadow: 10px 10px 10px black;
+	}	
+	.log{
+	text-align:center;
+	font-family:Courier New;
+	font-size:40px;
+	color:#444;
+	}
+
+	.frm{
+	background-color:grey;
+	height:70%;
+	width:70%;
+	margin:auto;
+	border-radius:0px 25px 25px 0px;
+	box-shadow:5px 5px 7px black;
+        
+	}
+	.abc{
+	border-radius:5px;
+	height:40px;
+	width:250px
+	
+	}
+	.inp{
+	font-size:20px;
+	font-family:Helvetica;
+	}
+
+	.forg{
+	border-radius:5px;
+	height:12%;
+	width:100%;
+	background-color:lightgray;
+	}
+	.acc{
+	float:right;
+	}
+	.forgo{
+	float:left;
+	
+	}
+	.butt{
+	float:right;}
+	.csf{
+	text-decoration:none;
+	font-weight:bold;
+	color:black;
+	}
+	.csf:hover{
+	background-color:red;
+	}
+	
+	
+  input[type=submit]:hover {
+    background-color: #45a049;
+   
+    
+}
+  input[type=submit] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    
+    border-radius: 5px;
+    cursor: pointer;
+	font-weight:bold;
+	font-size:20px;
+	box-shadow:5px 5px 5px;
+}
+
+	
+	</style>
+  </head>
+<body>
+    <div class="mdiv">
+        <div class="div1">
+              <video width="400" height="350" controls>
+  <source src="videoplayback.mp4" type="video/mp4">
+</video>
+        </div>
+<div class="div2">
+    <div class="log"> Log In</div>
+	<div class="frm">
+	<form action="login.jsp" >
+	<table>
+	<tr><td class="inp">USERNAME</td></tr>
+	<tr><td><input class="abc" type="text" name="username" placeholder="eg.abc123" required></td>
+	</tr>
+	<tr>
+	<tr><td class="inp">PASSWORD</td></tr>
+	<tr><td><input class="abc" type="password" name="password" required placeholder="*********"></td>
+	</tr>
+	<tr><td><input type="submit" value="LOGIN"></td></tr>
+	</table>
+	</form>
+	</div>
+	<br>
+	 <div class="forg">
+	 <div class="forgo">
+	 <a href="" class="csf">FORGOT PASSWORD?</a>
+	 
+	 </div>
+   	 
+  <div class="acc">
+      <a href="createacc.html" class="csf">CREATE NEW ACCOUNT?</a> <br>
+	
+	</div>
+	 </div>
+	 	 
+	 </div>
+    </div>
+ </body>
+ </html>
