@@ -104,9 +104,20 @@
 }
 
 	
-	</style>
+
+        </style>
+        <script>
+            function funcc()
+            {
+                var q=document.getElementById("qwe");
+                var w=q.length;
+                document.getElementById("namee").innerHTML=w;
+            }
+            </script>
   </head>
 <body>
+   
+<p id="namee"></p>
     <div class="mdiv">
         <div class="div1">
               <video width="400" height="350" controls>
@@ -119,7 +130,7 @@
 	<form action="login.jsp" >
 	<table>
 	<tr><td class="inp">USERNAME</td></tr>
-	<tr><td><input class="abc" type="text" name="username" placeholder="eg.abc123" required></td>
+        <tr><td><input class="abc" type="text" name="username" id="qwe" onkeyup="funcc" placeholder="eg.abc123" required></td>
 	</tr>
 	<tr>
 	<tr><td class="inp">PASSWORD</td></tr>
@@ -144,5 +155,6 @@
 	 	 
 	 </div>
     </div>
+  
  </body>
  </html>

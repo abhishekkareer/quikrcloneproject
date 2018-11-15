@@ -25,6 +25,22 @@ ul {
     height: 100%;
     overflow: auto;
 }
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.divv {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    float: left;
+}
 
 li a {
     display: block;
@@ -68,7 +84,9 @@ li a:hover:not(.active) {
 		out.println("<body>");
                 out.println("<ul>");
 		
-                
+                out.println("<li><p>");
+                out.println(username);
+                out.println("</p></li>");
                 out.println("<li><a class='active' href='home.html'>Home</a></li>");
                
                 out.println("<li><a href=''>ads</a></li>");
