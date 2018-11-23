@@ -74,11 +74,18 @@ li a:hover:not(.active) {
             {
       String username=rs.getString("username");
       String passs=rs.getString("password");
-      if(pass.equals(passs))
+      String pro=rs.getString("proffession");
+      int b=rs.getInt("salary");
+     
+      int aa=rs.getInt("age");
+      int bb=aa-101;
+      StringBuffer s=new StringBuffer(passs);
+      String newpass = s.substring(0, s.length()-1);
+      if(username.equals(user))
       {
-          if(username.equals(user))
+          if(pass.equals(newpass))
           {
-         out.println("login successfull");
+         /*out.println("login successfull");
          out.println("<html>");
 		out.println("<head><title></title></head>");
 		out.println("<body>");
@@ -98,11 +105,27 @@ li a:hover:not(.active) {
 
                 out.println("</div>");
 
-                out.println("</body></html>");
+                out.println("</body></html>");*/
+              String s1=String.valueOf(aa);
+              String s2=String.valueOf(b);
+              String name=rs.getString("name");
+              session.setAttribute("unamee",name);
+              session.setAttribute("age",s1);
+              session.setAttribute("proo",pro);
+              session.setAttribute("salary",s2);
+              session.setAttribute("usernamee",username);
+              response.sendRedirect("home.jsp");
+              
           }
           
       }
             }
+            /*
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('wrong username or password');");
+            out.println("</script>");
+            RequestDispatcher rd=request.getRequestDispatcher("temp.html");
+            rd.include(request, response);*/
         %>
     </body>
 </html>

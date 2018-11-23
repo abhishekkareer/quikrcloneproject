@@ -1,3 +1,91 @@
+<%-- 
+    Document   : buyorsell
+    Created on : Nov 20, 2018, 11:57:51 PM
+    Author     : ABHISHEK KAREER
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    
+<style>
+
+
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #B0E0E6;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  vertical-align:middle;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<script>
+function myFunction() {
+  window.open("home.jsp","frame");
+}
+</script>
+
+</head>
+<body>
+
+    
+
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+
+</div>
+
+
+
+</body>
+</html>
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,19 +215,25 @@ function scrollFunction() {
 </script>
 </head>
 <body>
-<img src="quikrlogo.png" alt="Paris" style="width:100%;">
+    <%
+        String name=(String)session.getAttribute("unamee");
+        %>
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-      <a href="#">login In</a>
-    <a href="#">Contact Us</a>
+      
+    <a href="">Contact Us</a>
+    <a href="">help?</a>
+    <a href="logoutservlet">Logout</a>
   </div>
 </div>
 <ul ><!--id="navbar"-->
     <li><span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></li>
-  <li><a class="active" href="home.html">Home</a></li>
-  <li><a href="" id="logo">Post an Ad</a></li>
-  <li><a href="">About</a></li>
+  <li><a class="active" href="home.jsp">Home</a></li>
+  <li><a href="postanad.jsp" id="logo">Post an Ad</a></li>
+  <li><a href="buyorsell.jsp">Buy/Sell</a></li>
+  <li><a href="profile.jsp">Profile</a></li>
+  <li><a href="About.jsp">About</a></li>
   <li><div class="topnav">
   <div class="search-container">
     <form action="/action_page.php">
@@ -148,13 +242,19 @@ function scrollFunction() {
     </form>
   </div>
 </div></li>
-  <li style="float:right;color:white;">abhishek</li>
+<li style="float:right;color:white;"><%out.println("<font size='6'>");
+ out.println("<b>");
+        out.println("welcome");
+                        out.println("</b>");
+out.println(name);
+       
+                                out.println("</font>");%></li>
   
 </ul>
 
 <div style="padding:20px;margin-top:30px;height:1500px;">
 
-<p>hello</p>
+    
 
 </div>
 

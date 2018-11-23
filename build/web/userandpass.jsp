@@ -8,30 +8,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>insert page in test1</title>
+        <title>insert page in test3</title>
     </head>
     <body>
         <%
-            String uname=request.getParameter("username");
-            String pass=request.getParameter("password");
-            String name=(String)session.getAttribute("Name");
-            String aa=(String)session.getAttribute("Age");
-            String Proff=(String)session.getAttribute("Proff");
-            String  bb=(String)session.getAttribute("Salary");
-            int a=Integer.parseInt(aa);
-            int b=Integer.parseInt(bb);
+            String email=request.getParameter("Email");
+            String Phoneno=request.getParameter("PhoneNumber");
+            String pass=request.getParameter("Password");
+            String fname=(String)session.getAttribute("FName");
+            String lname=(String)session.getAttribute("LName");
+            String pin=(String)session.getAttribute("Pincode");
+            String address=(String)session.getAttribute("addres");
+            StringBuffer s=new StringBuffer(pass);
+            int len=s.length();
+            s.insert(len,"!");
+            //String newpass = s.substring(0, s.length()-1);
+            long a=Integer.parseInt(Phoneno);
+            a=a+101;
+            //out.println(a);
+            int b=Integer.parseInt(pin);
              try
            {   
             String url="jdbc:mysql://localhost:3306/userdetail";
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn =DriverManager.getConnection(url,"root","");
-            String query="insert into test1 values('"+name+"',"+a+",'"+Proff+"',"+b+",'"+uname+"','"+pass+"')";
-            out.println(query);
+            String query="insert into test1 values('"+fname+"',"+a+",'"+address+"',"+b+",'"+email+"','"+s+"')";
+            //out.println(query);
             Statement st=conn.createStatement();
             int q=st.executeUpdate(query);
             if(q>0)
             {
-                out.println("row insert");
+                RequestDispatcher rd=request.getRequestDispatcher("indexlogin.html");
+                out.println("<script type=\"text/javascript\">");
+            out.println("alert('successfully registered');");
+            out.println("</script>");
+                rd.forward(request,response);
             }
             else
             {
