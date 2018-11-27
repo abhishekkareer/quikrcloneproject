@@ -143,8 +143,33 @@ img {
     box-shadow: 0px 5px 0px #d03338;
     cursor:pointer;
 }
-div {
-    
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 240px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.styled-select.slate {
+   background: url(http://i62.tinypic.com/2e3ybe1.jpg) no-repeat right center;
+   height: 34px;
+   width: 240px;
+}
+
+.styled-select.slate select {
+   border: 1px solid #ccc;
+   font-size: 16px;
+   height: 34px;
+   width: 268px;
 }
 </style>
 </head>
@@ -161,7 +186,7 @@ div {
     <a href="logoutservlet">Logout</a>
   </div>
 </div>
-<ul ><!--id="navbar"-->
+<ul >
     <li><span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></li>
   <li><a class="active" href="home.jsp">Home</a></li>
   <li><a href="postanad.jsp" id="logo">Post an Ad</a></li>
@@ -185,54 +210,22 @@ out.println(name);
                                 out.println("</font>");%></li>
   
 </ul>
-<!--
-<div style="padding:20px;margin-top:300px;height:1500px;background-color: #dcdcdc;
-    width: 300px;
-    border: 9px solid green;
-    margin: 20px;">
-
-    <form action="postadd.jsp">
-        <table border="2">
-            <tr>
-                <th>enter the name</th>
-                <td><input type="text" name="name"></td>
-            </tr>        
-            <tr>
-                <th>catagory</th>
-                <td>
-                    <select name="cat">
-        <option value="book">Books</option>
-        <option value="veh">vehice</option>
-        <option value="comp">computer</option>
-        <option value="pro">property</option>
-        <option value="other">other</option>
-      </select>
-                </td>
-            </tr>
-            <tr>
-                <th>image</th>
-                <td><input type="file" name="photo"></td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td><input type="text" name="price"></td>
-            </tr>
-            <tr>
-                <td>
-            <tr>
-                <td colspan="2">
-            <input type="submit" value="post add">
-                </td> </tr></table>
-    </form>
-
-</div>
--->
+<
 <div class="container">
     </br></br></br>
 		<h4>Post an ad</h4>
 
 		<div class="contact">
 			<form action="postadd.jsp" method="post">
+                          <div class="styled-select slate">
+  <select name="category">
+    <option >category</option>
+    <option value="vehicle">vehicle</option>
+    <option value="property">property</option>
+    <option value="electronics">electronics</option>
+    <option value="books">books</option>
+  </select>
+</div>
 				<input type="text" Name="brand" placeholder="BRAND" required="">
 				<input type="text" Name="modelno" placeholder="MODEL NO" required="">
 				<input type="email" Name="email" placeholder="EMAIL" required="">
@@ -240,7 +233,7 @@ out.println(name);
                                 <input type="text" Name="year" placeholder="YEAR OF PURCHASE" required="">
                                 <input type="text" Name="price" placeholder="SELLING PRICE" required="">
                                 <input type="text" Name="city" placeholder="AREA" required="">
-                                <input type="file" name="file" id="file" class="upload" />
+                                <input type="file" name="photo" id="file" class="upload" />
                                 <label for="file" >Choose a file</label>
                         
 				<div class="send-button">

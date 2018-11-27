@@ -6,59 +6,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CHECK DATABASE</title>
-        <style>
-body {
-    margin: 0;
-}
-div
-{
-    padding:1px 16px;
-    height:1000px;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-}
-ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-.divv {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    float: left;
-}
-
-li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-li a.active {
-    background-color: #4CAF50;
-    color: white;
-}
-
-li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-}
-</style>
     </head>
     <body>
         <% 
@@ -74,10 +21,10 @@ li a:hover:not(.active) {
             {
       String username=rs.getString("username");
       String passs=rs.getString("password");
-      String pro=rs.getString("proffession");
-      int b=rs.getInt("salary");
+      String pro=rs.getString("address");
+      int b=rs.getInt("pincode");
      
-      int aa=rs.getInt("age");
+      int aa=rs.getInt("recoveryno");
       int bb=aa-101;
       StringBuffer s=new StringBuffer(passs);
       String newpass = s.substring(0, s.length()-1);
@@ -108,8 +55,10 @@ li a:hover:not(.active) {
                 out.println("</body></html>");*/
               String s1=String.valueOf(aa);
               String s2=String.valueOf(b);
-              String name=rs.getString("name");
-              session.setAttribute("unamee",name);
+              String fname=rs.getString("fname");
+              String lname=rs.getString("lname");
+              session.setAttribute("unamee",fname);
+              session.setAttribute("lname2",lname);
               session.setAttribute("age",s1);
               session.setAttribute("proo",pro);
               session.setAttribute("salary",s2);

@@ -127,6 +127,7 @@
         String pro=(String)session.getAttribute("proo");
         String s2=(String)session.getAttribute("salary");
         String username=(String)session.getAttribute("usernamee");
+        String lname=(String)session.getAttribute("lname3");
         int rno=Integer.parseInt(s1);
         rno=rno-101;
            %>
@@ -149,7 +150,7 @@
                         <div class="profile-head">
                                     <h5>
                                    
-                                        <% String hello=null ;out.println(name);out.println(hello); %>
+                                        <% String hello=lname ;out.println(name);out.println(lname); %>
                                     </h5>
                                     
                                     

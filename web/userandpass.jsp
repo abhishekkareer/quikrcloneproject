@@ -19,6 +19,7 @@
             String lname=(String)session.getAttribute("LName");
             String pin=(String)session.getAttribute("Pincode");
             String address=(String)session.getAttribute("addres");
+            String mobileno=(String)session.getAttribute("mobileno");
             StringBuffer s=new StringBuffer(pass);
             int len=s.length();
             s.insert(len,"!");
@@ -32,17 +33,18 @@
             String url="jdbc:mysql://localhost:3306/userdetail";
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn =DriverManager.getConnection(url,"root","");
-            String query="insert into test1 values('"+fname+"',"+a+",'"+address+"',"+b+",'"+email+"','"+s+"')";
+            String query="insert into test1 values('"+fname+"','"+lname+"',"+a+",'"+address+"',"+b+",'"+email+"','"+s+"','"+mobileno+"')";
             //out.println(query);
             Statement st=conn.createStatement();
             int q=st.executeUpdate(query);
             if(q>0)
             {
                 RequestDispatcher rd=request.getRequestDispatcher("indexlogin.html");
+                rd.forward(request,response);
                 out.println("<script type=\"text/javascript\">");
             out.println("alert('successfully registered');");
             out.println("</script>");
-                rd.forward(request,response);
+                
             }
             else
             {

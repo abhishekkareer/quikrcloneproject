@@ -11,6 +11,11 @@
 <html>
     <head>
         <title></title>
+        <script>
+function funn() {
+    window.open("test.jsp");
+}
+</script>
     </head>
     <body>
         <%
@@ -19,33 +24,38 @@
             response.setContentType("image/jpg");
              try
            {   
+            String catagory=(String)session.getAttribute("category1");
+            String brand=(String)session.getAttribute("brand1");
+            String email=(String)session.getAttribute("email1");
             String url="jdbc:mysql://localhost:3306/userdetail";
             Class.forName("com.mysql.jdbc.Driver");
             Connection con =DriverManager.getConnection(url,"root","");
           
             Blob image = null;
 
-byte[ ] imgData = null ;
-Statement stmt = null;
+            byte[ ] imgData = null ;
+            Statement stmt = null;
 ResultSet rs = null;
 
 
 stmt = con.createStatement();
-rs = stmt.executeQuery("select photo from imptable where name ='abhishek'");
+rs = stmt.executeQuery("select photo from storepost where category ='"+catagory+"' and brand='"+brand+"' ");
 if (rs.next()) {
 image = rs.getBlob(1);
 imgData = image.getBytes(1,(int)image.length());
-
+//request.getRequestDispatcher("indexlogin.html").include(request, response);
 } 
 else {
 out.println("Display Blob Example");
-out.println("image not found for given id>");
+out.println("image not found for given id");
 
         }
 OutputStream o = response.getOutputStream();
 o.write(imgData);
 o.flush();
 o.close();
+
+//session.invalidate();
            }
            
         

@@ -84,6 +84,7 @@
                             <%out.println("<input type='text' value='"+FName+"'>");%>
 				<%out.println("<input type='text' value='"+LName+"'>");%>
 				<input type="text" Name="Email" placeholder="EMAIL" required="">
+                                <input type="text" Name="mobileno" placeholder="CONTACT NO" required="">
 				<input type="password" Name="Password" placeholder="PASSWORD" required="">
                                 <input type="password" Name="PhoneNumber" placeholder="RECOVERY NO " required="">
 				<div class="send-button">

@@ -187,7 +187,10 @@ ol {
 }
 </style>
 <script>
-//here these function open nav bar and close them
+function funn()
+{
+    window.open("TEST.jsp");
+}
 function openNav() {
   document.getElementById("myNav").style.height = "100%";
 }
@@ -226,12 +229,12 @@ function scrollFunction() {
     <li><span style="font-size:30px;cursor:pointer;color:white;" onclick="openNav()">&#9776;</span></li>
   <li><a class="active" href="home.jsp">Home</a></li>
   <li><a href="postanad.jsp" id="logo">Post an Ad</a></li>
-  <li><a href="">Buy/Sell</a></li>
+  <li><a href="TEST.jsp">Buy/Sell</a></li>
   <li><a href="profile.jsp">Profile</a></li>
   <li><a href="About.jsp">About</a></li>
   <li><div class="topnav">
   <div class="search-container">
-    <form action="/action_page.php">
+    <form action="search.jsp">
       <input type="text" placeholder="Search.." name="search">
       <button type="submit">search</button>
     </form>
@@ -239,6 +242,7 @@ function scrollFunction() {
 </div></li>
 <%
         String name=(String)session.getAttribute("unamee");
+        String lname=(String)session.getAttribute("lname2");
         String s1=(String)session.getAttribute("age");
         String pro=(String)session.getAttribute("proo");
         String s2=(String)session.getAttribute("salary");
@@ -248,6 +252,7 @@ function scrollFunction() {
               session.setAttribute("proo",pro);
               session.setAttribute("salary",s2);
               session.setAttribute("usernamee",username);
+              session.setAttribute("lname3",lname);
         %>
 <li style="float:right;color:white;"><%out.println("<font size='6'>");
  out.println("<b>");
@@ -262,16 +267,16 @@ out.println(name);
 <div style="padding:20px;margin-top:30px;height:1500px;">
 
     <ol><center>
-  <li><button class="button" style="vertical-align:middle"><span>VEHICLES </span></button></li>
+  <li><button class="button" onclick="funn()"style="vertical-align:middle"><span>VEHICLES </span></button></li>
 
     <li><button class="button" onclick="funn()" ><span>PROPERTY </span></button></li>
 <li><button class="button" style="vertical-align:middle"><span>ELECTRONICS </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>BOOKS </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>JOBS </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>KIDS & TOYS </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>ENTERTAINMENT </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>FURNITURE & DECOR </span></button></li>
-  <li><button class="button" style="vertical-align:middle"><span>EVENTS </span></button></li>
+  <li><button class="button" onclick="funn()"style="vertical-align:middle"><span>BOOKS </span></button></li>
+  <li><button class="button" onclick="funn()"style="vertical-align:middle"><span>JOBS </span></button></li>
+  <li><button class="button" onclick="funn()"style="vertical-align:middle"><span>KIDS & TOYS </span></button></li>
+  <li><button class="button" onclick="funn()" style="vertical-align:middle"><span>ENTERTAINMENT </span></button></li>
+  <li><button class="button" onclick="funn()"style="vertical-align:middle"><span>FURNITURE & DECOR </span></button></li>
+  <li><button class="button" onclick="funn()" style="vertical-align:middle"><span>EVENTS </span></button></li>
 </center></ol>
 <!--
 <div class="btn-group">
@@ -285,6 +290,9 @@ out.println(name);
 
   
 
-
+                                
 </body>
+<footer>
+                                    <img src="QUIKR CLONE.png">
+                                </footer>
 </html>
