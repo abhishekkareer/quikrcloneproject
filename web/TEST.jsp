@@ -193,7 +193,8 @@ function buy()
                 out.println("<button class='button buttonn' onclick='funn()' >IMAGE</button>");
                 out.println("</td>");
                 out.println("<td>");
-                out.println("<button onclick='buy()' class='button buttonn'>BUY</button>");
+               // out.println("<button onclick='buy()' class='button buttonn'>BUY</button>")
+       out.println("<a href='buy.jsp?catagory1="+category+"&brand1="+brand+"'>Buy</a>");
                 out.println("</td>");
                 out.println("</tr>");
                 out.println("</table>");
@@ -201,10 +202,12 @@ function buy()
                 out.println("</div>");
                 out.println("</center>");
                 out.println("</body></html>");
+                /*
             session.setAttribute("category1", category);
             session.setAttribute("brand1", brand);
             session.setAttribute("email1", email);
             session.setAttribute("yop1", yop);
+*/
           }
             }
           catch(Exception e)

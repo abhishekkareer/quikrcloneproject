@@ -69,12 +69,7 @@
           
       }
             }
-            /*
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('wrong username or password');");
-            out.println("</script>");
-            RequestDispatcher rd=request.getRequestDispatcher("temp.html");
-            rd.include(request, response);*/
+           
         %>
     </body>
 </html>

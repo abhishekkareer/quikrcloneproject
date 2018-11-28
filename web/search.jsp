@@ -84,6 +84,10 @@ div {
 function funn() {
     window.open("dispimg.jsp");
 }
+function buy()
+{
+    window.open("buy.jsp");
+}
 </script>
     </head>
     <body>
@@ -186,7 +190,7 @@ function funn() {
                 out.println("<button onclick='funn()' class='button buttonn'>IMAGE</button>");
                 out.println("</td>");
                 out.println("<td>");
-                out.println("<button onclick='buy()' class='button buttonn'>BUY</button>");
+                out.println("<a href='buy.jsp?catagory1="+search2+"&brand1="+brand+"'>Buy</a>");
                 out.println("</td>");
                 out.println("</tr>");
                 out.println("</table>");
